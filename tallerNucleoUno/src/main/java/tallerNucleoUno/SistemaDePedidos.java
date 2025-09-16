@@ -1,5 +1,6 @@
 package tallerNucleoUno;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -36,8 +37,18 @@ public class SistemaDePedidos {
         }
         
         Orden orden = colaDePedidos.poll();
-        System.out.printf("Procesando Orden #%d con un total de $%.2f%n", 
-                         orden.getId(), orden.calcularTotal());
+        System.out.println("Procesando Orden #" + orden.getId() + " con total de $" + (int)orden.calcularTotal());
         return orden;
+    }
+    
+    public static <T> void imprimirColeccion(String titulo, Collection<T> coleccion) {
+        System.out.println(titulo);
+        for (T elemento : coleccion) {
+            System.out.println(elemento);
+        }
+    }
+    
+    public Queue<Orden> getColaDePedidos() {
+        return colaDePedidos;
     }
 }

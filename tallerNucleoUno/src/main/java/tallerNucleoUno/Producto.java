@@ -32,4 +32,9 @@ public class Producto {
     public String getSku() {
         return sku;
     }
+    
+    @Override
+    public String toString() {
+        return sku + " - " + nombre + " ($" + (int)precio + ")";
+    }
 }

@@ -1,7 +1,9 @@
 package tallerNucleoUno;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Orden {
     private int id;
@@ -33,6 +35,15 @@ public class Orden {
     
     public int getId() {
         return id;
+    }
+    
+    public Set<Producto> obtenerProductosUnicos() {
+        return new HashSet<>(productos.keySet());
+    }
+    
+    @Override
+    public String toString() {
+        return "Orden #" + id + " - Total: $" + (int)calcularTotal();
     }
 }
 
